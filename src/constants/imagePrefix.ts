@@ -1,0 +1,1 @@
+export const IMAGE_PREFIX='https://hobcv6.s3.ap-southeast-1.amazonaws.com/'

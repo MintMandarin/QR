@@ -1,0 +1,39 @@
+.breadcumItem {
+  cursor: pointer;
+}
+
+.breadcumItem:hover {
+  color: #a5805e;
+}
+
+.odd-row {
+  background-color: #fafafa;
+}
+
+.disable-checkbox .ant-table-selection-column {
+  display: none;
+}
+
+/* Custom CSS to remove number input arrows */
+.ant-input-number {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.ant-input-number::-webkit-outer-spin-button,
+.ant-input-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-top-radius .ant-table,
+.no-top-radius .ant-table-title {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-top: none !important;
+}
+
+
+*{
+  box-sizing: border-box;
+}
