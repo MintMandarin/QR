@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { NotFoundPage, QRScanner, UploadOrderImage } from "../pages";
+import { QRScanner, UploadOrderImage } from "../pages";
 
 export const RoutesWrapper = () => {
   return (
