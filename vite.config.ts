@@ -5,12 +5,12 @@ import { ghPages } from "vite-plugin-gh-pages";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), ghPages()],
-  // build: {
-  //   rollupOptions: {
-  //     input: {
-  //       main: "index.html",
-  //     },
-  //   },
-  // },
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+      },
+    },
+  },
   base: "/QR/",
 });

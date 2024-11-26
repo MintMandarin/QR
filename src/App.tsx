@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { RoutesWrapper } from "./routes/RoutesWrapper";
@@ -16,9 +15,7 @@ function App() {
       }}
     >
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <RoutesWrapper />
-        </BrowserRouter>
+        <RoutesWrapper />
       </QueryClientProvider>
     </ConfigProvider>
   );

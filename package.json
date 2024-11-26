@@ -1,13 +1,14 @@
 {
   "name": "sku",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mintmandarin.github.io/QR",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "homepage": "https://MintMandarin.github.io/QR",
-    "deploy": "tsc -b && vite build && gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },

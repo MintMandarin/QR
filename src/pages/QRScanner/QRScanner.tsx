@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Button, Flex, theme } from "antd";
 import { QrReader } from "react-qr-reader";
+import { useNavigate } from "react-router-dom";
 
-const replaceHostName = (url: string, newHost: string): string => {
-  const parsedUrl = new URL(url); // Parse the URL
-  parsedUrl.host = newHost; // Replace the hostname
-  return parsedUrl.toString(); // Return the updated URL as a string
+const formatUrl = (inputUrl: string): string => {
+  const url = new URL(inputUrl); // Parse the input URL
+  const pathname = url.pathname; // Extract the pathname
+  const search = url.search; // Extract the query string
+  return `${pathname}${search}`; // Combine pathname and query string
 };
 
 export const QRScanner = () => {
@@ -13,7 +15,7 @@ export const QRScanner = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-
+  const navigate = useNavigate();
   return (
     <div>
       <div
@@ -42,15 +44,14 @@ export const QRScanner = () => {
                 if (!!result) {
                   // @ts-ignore
                   const scannedUrl = result?.text;
-                  const updatedUrl = replaceHostName(
-                    scannedUrl,
-                    window.location.host
-                  );
+                  const updatedUrl = formatUrl(scannedUrl);
+                  console.log({ updatedUrl });
                   if (
                     scannedUrl.startsWith("http://") ||
                     scannedUrl.startsWith("https://")
                   ) {
-                    window.location.href = updatedUrl;
+                    // window.location.href = updatedUrl;
+                    navigate(updatedUrl);
                   } else {
                     console.warn(
                       "Scanned data is not a valid URL:",
