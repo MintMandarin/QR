@@ -14,7 +14,6 @@ export const QRScanner = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
-  console.log(window.location.host)
   return (
     <div>
       <div
@@ -47,12 +46,11 @@ export const QRScanner = () => {
                     scannedUrl,
                     window.location.host
                   );
-                  console.log({ updatedUrl });
                   if (
                     scannedUrl.startsWith("http://") ||
                     scannedUrl.startsWith("https://")
                   ) {
-                    window.location.href = scannedUrl;
+                    window.location.href = updatedUrl;
                   } else {
                     console.warn(
                       "Scanned data is not a valid URL:",
