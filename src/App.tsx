@@ -16,7 +16,7 @@ function App() {
       }}
     >
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <RoutesWrapper />
         </BrowserRouter>
       </QueryClientProvider>
