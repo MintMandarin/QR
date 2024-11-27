@@ -45,7 +45,6 @@ export const QRScanner = () => {
                   // @ts-ignore
                   const scannedUrl = result?.text;
                   const updatedUrl = formatUrl(scannedUrl);
-                  console.log({ updatedUrl });
                   if (
                     scannedUrl.startsWith("http://") ||
                     scannedUrl.startsWith("https://")
